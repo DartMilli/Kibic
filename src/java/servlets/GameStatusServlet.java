@@ -35,7 +35,9 @@ public class GameStatusServlet extends HttpServlet {
         //https://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax
         //https://www.w3schools.com/howto/howto_css_login_form.asp
         //https://github.com/google/gson/blob/master/UserGuide.md
-        //https://www.mkyong.com/java/how-to-parse-json-with-gson/        
+        //https://www.mkyong.com/java/how-to-parse-json-with-gson/   
+        //https://stackoverflow.com/questions/30663562/use-images-like-checkboxes
+        //https://www.w3schools.com/howto/howto_css_login_form.asp
         GameStatus gs = new Gson().fromJson(reader, GameStatus.class);
         System.out.println(gs);
 
@@ -47,7 +49,6 @@ public class GameStatusServlet extends HttpServlet {
             // Handle regular (JSP) response.
         }
 
-        gs.setTalon(new ArrayList<>());
         String responseJsonStr = new Gson().toJson(gs);
         
         response.setContentType("application/json");

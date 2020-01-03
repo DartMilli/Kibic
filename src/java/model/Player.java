@@ -64,6 +64,10 @@ public class Player {
     public void setBeated(BeatedCards beated) {
         this.beated = beated;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Player{" + "hand=" + hand + '}';
+    }    
     
 }

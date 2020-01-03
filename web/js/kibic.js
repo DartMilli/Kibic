@@ -15,41 +15,41 @@ var allCards = [];
 var nominalCardWidth = 128;
 var nominalCardHeight = 200;
 
-var cardNames = {
-    "makk 10": "img/m_10.png",
-    "makk 7": "img/m_7.png",
-    "makk 8": "img/m_8.png",
-    "makk 9": "img/m_9.png",
-    "makk also": "img/m_al.png",
-    "makk asz": "img/m_as.png",
-    "makk felso": "img/m_f.png",
-    "makk kiraly": "img/m_k.png",
-    "piros 10": "img/p_10.png",
-    "piros 7": "img/p_7.png",
-    "piros 8": "img/p_8.png",
-    "piros 9": "img/p_9.png",
-    "piros also": "img/p_al.png",
-    "piros asz": "img/p_as.png",
-    "piros felso": "img/p_f.png",
-    "piros kiraly": "img/p_k.png",
-    "tok 10": "img/t_10.png",
-    "tok 7": "img/t_7.png",
-    "tok 8": "img/t_8.png",
-    "tok 9": "img/t_9.png",
-    "tok also": "img/t_al.png",
-    "tok asz": "img/t_as.png",
-    "tok felso": "img/t_f.png",
-    "tok kiraly": "img/t_k.png",
-    "zold 10": "img/z_10.png",
-    "zold 7": "img/z_7.png",
-    "zold 8": "img/z_8.png",
-    "zold 9": "img/z_9.png",
-    "zold also": "img/z_al.png",
-    "zold asz": "img/z_as.png",
-    "zold felso": "img/z_f.png",
-    "zold kiraly": "img/z_k.png",
-    "hatlap": "img/hat.png"
+var cardNames;
+function initCardNames() {
+    cardNames = $.ajax({
+        url: "js/cards.json",
+        async: false,
+        dataType: 'json'
+    }).responseJSON;
 };
+
+function getCardNameById(id) {
+    for (var i = 0; i < cardNames.length; i++) {
+        if (id == cardNames[i]["id"]) {
+            return cardNames[i]["name"];
+        }
+    }
+    return "";
+}
+
+function getCardPathById(id) {
+    for (var i = 0; i < cardNames.length; i++) {
+        if (id == cardNames[i]["id"]) {
+            return cardNames[i]["path"];
+        }
+    }
+    return "";
+}
+
+function getCardColorById(id) {
+    for (var i = 0; i < cardNames.length; i++) {
+        if (id == cardNames[i]["id"]) {
+            return cardNames[i]["color"];
+        }
+    }
+    return "";
+}
 
 var status;
 function initEmptyStatus() {
@@ -59,41 +59,41 @@ function initEmptyStatus() {
     status += '	   "round": 0,           ';
     status += '	   "talon": [],          ';
     status += '	   "cardsingame": [      ';
-    status += '        "piros asz",      ';
-    status += '        "piros 10",       ';
-    status += '        "piros kiraly",   ';
-    status += '        "piros felso",    ';
-    status += '        "piros also",     ';
-    status += '        "piros 9",        ';
-    status += '        "piros 8",        ';
-    status += '        "piros 7",        ';
-    status += '        "tok asz",        ';
-    status += '        "tok 10",         ';
-    status += '        "tok kiraly",     ';
-    status += '        "tok felso",      ';
-    status += '        "tok also",       ';
-    status += '        "tok 9",          ';
-    status += '        "tok 8",          ';
-    status += '        "tok 7",          ';
-    status += '        "zold asz",       ';
-    status += '        "zold 10",        ';
-    status += '        "zold kiraly",    ';
-    status += '        "zold felso",     ';
-    status += '        "zold also",      ';
-    status += '        "zold 9",         ';
-    status += '        "zold 8",         ';
-    status += '        "zold 7",         ';
-    status += '        "makk asz",       ';
-    status += '        "makk 10",        ';
-    status += '        "makk kiraly",    ';
-    status += '        "makk felso",     ';
-    status += '        "makk also",      ';
-    status += '        "makk 9",         ';
-    status += '        "makk 8",         ';
-    status += '        "makk 7"          ';
+    status += '        "pas",            ';
+    status += '        "p10",            ';
+    status += '        "pk",             ';
+    status += '        "pf",             ';
+    status += '        "pal",            ';
+    status += '        "p9",             ';
+    status += '        "p8",             ';
+    status += '        "p7",             ';
+    status += '        "tas",            ';
+    status += '        "t10",             ';
+    status += '        "tk",             ';
+    status += '        "tf",             ';
+    status += '        "tal",            ';
+    status += '        "t9",             ';
+    status += '        "t8",             ';
+    status += '        "t7",             ';
+    status += '        "zas",            ';
+    status += '        "z10",            ';
+    status += '        "zk",             ';
+    status += '        "zf",             ';
+    status += '        "zal",            ';
+    status += '        "z9",             ';
+    status += '        "z8",             ';
+    status += '        "z7",             ';
+    status += '        "mas",            ';
+    status += '        "m10",            ';
+    status += '        "mk",             ';
+    status += '        "mf",             ';
+    status += '        "mal",            ';
+    status += '        "m9",             ';
+    status += '        "m8",             ';
+    status += '        "m7"              ';
     status += '    ],                    ';
     status += '	   "gamer": {            ';
-    status += '        "uknowncards": 12,';
+    status += '        "unknowncards": 12,';
     status += '        "calls": [],      ';
     status += '        "thrown": [],     ';
     status += '        "hand": [],       ';
@@ -111,7 +111,7 @@ function initEmptyStatus() {
     status += '        }                 ';
     status += '    },                    ';
     status += '    "rightgamer": {       ';
-    status += '        "uknowncards": 12,';
+    status += '        "unknowncards": 10,';
     status += '        "calls": [],      ';
     status += '        "thrown": [],     ';
     status += '        "hand": [],       ';
@@ -129,7 +129,7 @@ function initEmptyStatus() {
     status += '        }                 ';
     status += '    },                    ';
     status += '    "leftgamer": {        ';
-    status += '        "uknowncards": 12,';
+    status += '        "unknowncards": 10,';
     status += '        "calls": [],      ';
     status += '        "thrown": [],     ';
     status += '        "hand": [],       ';
@@ -148,19 +148,6 @@ function initEmptyStatus() {
     status += '    }                     ';
     status += '}                         ';
 }
-
-var btnDiv = {
-    div: document.createElement("DIV"),
-    button: document.createElement("BUTTON"),
-    start: function () {
-        this.button.innerHTML = "Click Me!";
-        this.button.onclick = clickAndPostGameStatus;
-        this.div.appendChild(this.button);
-        this.div.width = window.innerWidth - 25;
-        this.div.height = 25;
-        document.body.insertBefore(this.div, document.body.childNodes[1]);
-    }
-};
 
 var gameArea = {
     canvas: document.createElement("canvas"),
@@ -268,12 +255,12 @@ function initCardsFromJson() {
         }
         var index = 0;
         for (var j = 0; j < player.hand.length; j++) {
-            cards[index] = new component(nominalCardWidth, nominalCardHeight, cardNames[player.hand[index]], 0, 0, "image");
+            cards[index] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(player.hand[index]), 0, 0, "image");
             allCards.push(cards[index]);
             index++;
         }
-        for (var j = 0; j < player.uknowncards; j++) {
-            cards[index] = new component(nominalCardWidth, nominalCardHeight, cardNames["hatlap"], 0, 0, "image");
+        for (var j = 0; j < player.unknowncards; j++) {
+            cards[index] = new component(nominalCardWidth, nominalCardHeight, getCardPathById("h"), 0, 0, "image");
             allCards.push(cards[index]);
             index++;
         }
@@ -284,13 +271,13 @@ function initCardsFromJson() {
                 if (player.beated[key].length < 3) {
                     beatedCards[j - 1][k] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0);
                 } else {
-                    beatedCards[j - 1][k] = new component(nominalCardWidth, nominalCardHeight, cardNames[player.beated[key][k]], 0, 0, "image");
+                    beatedCards[j - 1][k] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(player.beated[key][k]), 0, 0, "image");
                     allCards.push(beatedCards[j - 1][k]);
                 }
             }
         }
         if (player.thrown.length != 0) {
-            thrownCard[0] = new component(nominalCardWidth, nominalCardHeight, cardNames[player.thrown[0]], 0, 0, "image");
+            thrownCard[0] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(player.thrown[0]), 0, 0, "image");
             allCards.push(thrownCard[0]);
         } else {
             thrownCard[0] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0, );
@@ -298,27 +285,27 @@ function initCardsFromJson() {
     }
     //init opponent cards in game
     for (var i = 0; i < gameStatus.cardsingame.length; i++) {
-        cardsInGame[i] = new component(nominalCardWidth, nominalCardHeight, cardNames[gameStatus.cardsingame[i]], 0, 0, "image");
+        cardsInGame[i] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(gameStatus.cardsingame[i]), 0, 0, "image");
         allCards.push(cardsInGame[i]);
     }
     // init talon
     if (gameStatus.talon.length == 0) {
-        if (gameStatus.gamer.uknowncards + gameStatus.gamer.hand.length == 12
-                || gameStatus.rightgamer.uknowncards + gameStatus.rightgamer.hand.length == 12
-                || gameStatus.leftgamer.uknowncards + gameStatus.leftgamer.hand.length == 12) {
+        if (gameStatus.gamer.unknowncards + gameStatus.gamer.hand.length == 12
+                || gameStatus.rightgamer.unknowncards + gameStatus.rightgamer.hand.length == 12
+                || gameStatus.leftgamer.unknowncards + gameStatus.leftgamer.hand.length == 12) {
             cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0);
             cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0);
         } else {
-            cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, cardNames["hatlap"], 0, 0, "image");
-            cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, cardNames["hatlap"], 0, 0, "image");
+            cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, getCardPathById("h"), 0, 0, "image");
+            cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, getCardPathById("h"), 0, 0, "image");
         }
     } else if (gameStatus.talon.length == 1) {
-        cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, cardNames[gameStatus.talon[0]], 0, 0, "image");
+        cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(gameStatus.talon[0]), 0, 0, "image");
         allCards.push(cardsInTalon[0]);
-        cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, cardNames["hatlap"], 0, 0, "image");
+        cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, getCardPathById("h"), 0, 0, "image");
     } else {
-        cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, cardNames[gameStatus.talon[0]], 0, 0, "image");
-        cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, cardNames[gameStatus.talon[1]], 0, 0, "image");
+        cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(gameStatus.talon[0]), 0, 0, "image");
+        cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(gameStatus.talon[1]), 0, 0, "image");
         allCards.push(cardsInTalon[0]);
         allCards.push(cardsInTalon[1]);
     }
@@ -475,8 +462,8 @@ function startGame() {
         updateGameArea();
     }, true);
     initEmptyStatus();
+    initCardNames();
     gameArea.start();
-    btnDiv.start();
     readJson();
     initCardsFromJson();
     updateGameArea();
@@ -487,4 +474,26 @@ function updateGameArea() {
     gameArea.canvas.width = window.innerWidth - 25;
     gameArea.canvas.height = window.innerHeight - 50;
     updateCards();
+}
+
+function fillGameStatusFromCardPicker() {
+    var chkboxes = document.getElementsByTagName("input");
+    var cardList = [];
+    for (var i = 0; i < chkboxes.length; i++) {
+        if (chkboxes[i].checked) {
+            cardList.push(chkboxes[i].name);
+        }
+    }
+    if (cardList.length == 10 || cardList.length == 12) {
+        gameStatus.gamer.hand = cardList;
+        gameStatus.gamer.unknowncards = 0;
+        clickAndPostGameStatus();
+
+        for (var i = 0; i < chkboxes.length; i++) {
+            chkboxes[i].checked = false;
+        }
+        document.getElementById('id01').style.display = 'none';
+    } else {
+        alert("10 or 12 must be choosen!");
+    }
 }
