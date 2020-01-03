@@ -6,12 +6,15 @@ package model;
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
+import tools.Exclude;
 
 /**
  *
  * @author Milán Szlávik <szlavikmilan@gmail.com>
  */
 public class Player {
+    @Exclude
+    private String name; 
     @SerializedName("unknowncards")
     private int unknownCards;
     private List<String> calls;
@@ -63,11 +66,6 @@ public class Player {
 
     public void setBeated(BeatedCards beated) {
         this.beated = beated;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" + "hand=" + hand + '}';
-    }    
+    }  
     
 }

@@ -50,7 +50,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" + "id=" + id + ", name=" + name + '}';
+        return "Card{name=" + name + '}';
     }
     
 }
