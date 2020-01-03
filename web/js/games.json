@@ -1,0 +1,1329 @@
+[
+    {
+        "order": 1,
+        "point": 1,
+        "name": "parti",
+        "color": "makk",
+        "games": ["parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 1,
+        "point": 1,
+        "name": "parti",
+        "color": "zold",
+        "games": ["parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 1,
+        "point": 1,
+        "name": "parti",
+        "color": "tok",
+        "games": ["parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 2,
+        "point": 2,
+        "name": "piros parti",
+        "color": "piros",
+        "games": ["parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 3,
+        "point": 4,
+        "name": "40-100",
+        "color": "makk",
+        "games": ["40-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 3,
+        "point": 4,
+        "name": "40-100",
+        "color": "zold",
+        "games": ["40-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 3,
+        "point": 4,
+        "name": "40-100",
+        "color": "tok",
+        "games": ["40-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 4,
+        "point": 5,
+        "name": "négy ász parti",
+        "color": "makk",
+        "games": ["négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 4,
+        "point": 5,
+        "name": "négy ász parti",
+        "color": "zold",
+        "games": ["négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 4,
+        "point": 5,
+        "name": "négy ász parti",
+        "color": "tok",
+        "games": ["négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 4,
+        "point": 5,
+        "name": "ulti parti",
+        "color": "makk",
+        "games": ["ulti", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 4,
+        "point": 5,
+        "name": "ulti parti",
+        "color": "zold",
+        "games": ["ulti", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 4,
+        "point": 5,
+        "name": "ulti parti",
+        "color": "tok",
+        "games": ["ulti", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 5,
+        "point": 5,
+        "name": "betli",
+        "color": null,
+        "games": ["betli"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 6,
+        "point": 6,
+        "name": "durchmars",
+        "color": "makk",
+        "games": ["durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 6,
+        "point": 6,
+        "name": "durchmars",
+        "color": "zold",
+        "games": ["durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 6,
+        "point": 6,
+        "name": "durchmars",
+        "color": "tok",
+        "games": ["durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 6,
+        "point": 6,
+        "name": "színtelen durchmars",
+        "color": null,
+        "games": ["színtelen durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 7,
+        "point": 8,
+        "name": "40-100 négy ász",
+        "color": "makk",
+        "games": ["40-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 7,
+        "point": 8,
+        "name": "40-100 négy ász",
+        "color": "zold",
+        "games": ["40-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 7,
+        "point": 8,
+        "name": "40-100 négy ász",
+        "color": "tok",
+        "games": ["40-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 7,
+        "point": 8,
+        "name": "40-100 ulti",
+        "color": "makk",
+        "games": ["40-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 7,
+        "point": 8,
+        "name": "40-100 ulti",
+        "color": "zold",
+        "games": ["40-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 7,
+        "point": 8,
+        "name": "40-100 ulti",
+        "color": "tok",
+        "games": ["40-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 8,
+        "point": 8,
+        "name": "piros 40-100",
+        "color": "piros",
+        "games": ["40-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 8,
+        "point": 8,
+        "name": "20-100",
+        "color": "makk",
+        "games": ["20-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 8,
+        "point": 8,
+        "name": "20-100",
+        "color": "zold",
+        "games": ["20-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 8,
+        "point": 8,
+        "name": "20-100",
+        "color": "tok",
+        "games": ["20-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 9,
+        "point": 9,
+        "name": "ulti négy ász parti",
+        "color": "makk",
+        "games": ["ulti", "négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 9,
+        "point": 9,
+        "name": "ulti négy ász parti",
+        "color": "zold",
+        "games": ["ulti", "négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 9,
+        "point": 9,
+        "name": "ulti négy ász parti",
+        "color": "tok",
+        "games": ["ulti", "négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 10,
+        "point": 10,
+        "name": "piros négy ász parti",
+        "color": "piros",
+        "games": ["négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 10,
+        "point": 10,
+        "name": "piros ulti parti",
+        "color": "piros",
+        "games": ["ulti", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 12,
+        "point": 10,
+        "name": "rebetli",
+        "color": null,
+        "games": ["rebetli"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 11,
+        "point": 10,
+        "name": "40-100 durchmars",
+        "color": "makk",
+        "games": ["40-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 11,
+        "point": 10,
+        "name": "40-100 durchmars",
+        "color": "zold",
+        "games": ["40-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 11,
+        "point": 10,
+        "name": "40-100 durchmars",
+        "color": "tok",
+        "games": ["40-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 11,
+        "point": 10,
+        "name": "ulti durchmars",
+        "color": "makk",
+        "games": ["ulti", "durchmars"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 11,
+        "point": 10,
+        "name": "ulti durchmars",
+        "color": "zold",
+        "games": ["ulti", "durchmars"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 11,
+        "point": 10,
+        "name": "ulti durchmars",
+        "color": "tok",
+        "games": ["ulti", "durchmars"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 12,
+        "point": 12,
+        "name": "40-100 ulti négy ász",
+        "color": "makk",
+        "games": ["40-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 12,
+        "point": 12,
+        "name": "40-100 ulti négy ász",
+        "color": "zold",
+        "games": ["40-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 12,
+        "point": 12,
+        "name": "40-100 ulti négy ász",
+        "color": "tok",
+        "games": ["40-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 13,
+        "point": 12,
+        "name": "20-100 ulti",
+        "color": "makk",
+        "games": ["20-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 13,
+        "point": 12,
+        "name": "20-100 ulti",
+        "color": "zold",
+        "games": ["20-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 13,
+        "point": 12,
+        "name": "20-100 ulti",
+        "color": "tok",
+        "games": ["20-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 13,
+        "point": 12,
+        "name": "20-100 négy ász",
+        "color": "makk",
+        "games": ["20-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 13,
+        "point": 12,
+        "name": "20-100 négy ász",
+        "color": "zold",
+        "games": ["20-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 13,
+        "point": 12,
+        "name": "20-100 négy ász",
+        "color": "tok",
+        "games": ["20-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 14,
+        "point": 12,
+        "name": "színtelen redurchmars",
+        "color": null,
+        "games": ["színtelen redurchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 14,
+        "point": 12,
+        "name": "piros durchmars",
+        "color": "piros",
+        "games": ["durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 14,
+        "point": 12,
+        "name": "terített durchmars",
+        "color": "makk",
+        "games": ["terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 14,
+        "point": 12,
+        "name": "terített durchmars",
+        "color": "zold",
+        "games": ["terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 14,
+        "point": 12,
+        "name": "terített durchmars",
+        "color": "tok",
+        "games": ["terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 15,
+        "point": 14,
+        "name": "40-100 ulti durchmars",
+        "color": "makk",
+        "games": ["40-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 15,
+        "point": 14,
+        "name": "40-100 ulti durchmars",
+        "color": "zold",
+        "games": ["40-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 15,
+        "point": 14,
+        "name": "40-100 ulti durchmars",
+        "color": "tok",
+        "games": ["40-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 16,
+        "point": 14,
+        "name": "20-100 durchmars",
+        "color": "makk",
+        "games": ["20-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 16,
+        "point": 14,
+        "name": "20-100 durchmars",
+        "color": "zold",
+        "games": ["20-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 16,
+        "point": 14,
+        "name": "20-100 durchmars",
+        "color": "tok",
+        "games": ["20-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 17,
+        "point": 16,
+        "name": "20-100 ulti négy ász",
+        "color": "makk",
+        "games": ["20-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 17,
+        "point": 16,
+        "name": "20-100 ulti négy ász",
+        "color": "zold",
+        "games": ["20-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 17,
+        "point": 16,
+        "name": "20-100 ulti négy ász",
+        "color": "tok",
+        "games": ["20-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "piros 40-100 ulti",
+        "color": "piros",
+        "games": ["40-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "piros 40-100 négy ász",
+        "color": "piros",
+        "games": ["40-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 19,
+        "point": 16,
+        "name": "piros 20-100",
+        "color": "piros",
+        "games": ["20-100"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "40-100 terített durchmars",
+        "color": "makk",
+        "games": ["40-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "40-100 terített durchmars",
+        "color": "zold",
+        "games": ["40-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "40-100 terített durchmars",
+        "color": "tok",
+        "games": ["40-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "ulti terített durchmars",
+        "color": "makk",
+        "games": ["ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "ulti terített durchmars",
+        "color": "zold",
+        "games": ["ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 18,
+        "point": 16,
+        "name": "ulti terített durchmars",
+        "color": "tok",
+        "games": ["ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 20,
+        "point": 18,
+        "name": "piros ulti négy ász parti",
+        "color": "piros",
+        "games": ["ulti", "négy ász", "parti"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 21,
+        "point": 18,
+        "name": "20-100 ulti durchmars",
+        "color": "makk",
+        "games": ["20-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 21,
+        "point": 18,
+        "name": "20-100 ulti durchmars",
+        "color": "zold",
+        "games": ["20-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 21,
+        "point": 18,
+        "name": "20-100 ulti durchmars",
+        "color": "tok",
+        "games": ["20-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "40-100 ulti terített durchmars",
+        "color": "makk",
+        "games": ["40-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "40-100 ulti terített durchmars",
+        "color": "zold",
+        "games": ["40-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "40-100 ulti terített durchmars",
+        "color": "tok",
+        "games": ["40-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "piros 40-100 durchmars",
+        "color": "piros",
+        "games": ["40-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "piros ulti durchmars",
+        "color": "piros",
+        "games": ["ulti", "durchmars"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "20-100 terített durchmars",
+        "color": "makk",
+        "games": ["20-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "20-100 terített durchmars",
+        "color": "zold",
+        "games": ["20-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 22,
+        "point": 20,
+        "name": "20-100 terített durchmars",
+        "color": "tok",
+        "games": ["20-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 23,
+        "point": 20,
+        "name": "terített betli",
+        "color": null,
+        "games": ["terített betli"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 24,
+        "point": 24,
+        "name": "20-100 ulti terített durchmars",
+        "color": "makk",
+        "games": ["20-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 24,
+        "point": 24,
+        "name": "20-100 ulti terített durchmars",
+        "color": "zold",
+        "games": ["20-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 24,
+        "point": 24,
+        "name": "20-100 ulti terített durchmars",
+        "color": "tok",
+        "games": ["20-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 24,
+        "point": 24,
+        "name": "piros 40-100 ulti négy ász",
+        "color": "piros",
+        "games": ["40-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 25,
+        "point": 24,
+        "name": "piros 20-100 négy ász",
+        "color": "piros",
+        "games": ["20-100", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 25,
+        "point": 24,
+        "name": "piros 20-100 ulti",
+        "color": "piros",
+        "games": ["20-100", "ulti"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": true,
+            "négy ász": true
+        }
+    },
+    {
+        "order": 26,
+        "point": 24,
+        "name": "piros terített durchmars",
+        "color": "piros",
+        "games": ["terített durchmars"],
+        "csendes": {
+            "40-100": true,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 26,
+        "point": 24,
+        "name": "színtelen terített durchmars",
+        "color": null,
+        "games": ["színtelen terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 27,
+        "point": 28,
+        "name": "piros 40-100 ulti durchmars",
+        "color": "piros",
+        "games": ["40-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 28,
+        "point": 28,
+        "name": "piros 20-100 durchmars",
+        "color": "piros",
+        "games": ["20-100", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 29,
+        "point": 32,
+        "name": "piros 20-100 ulti négy ász",
+        "color": "piros",
+        "games": ["20-100", "ulti", "négy ász"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 30,
+        "point": 32,
+        "name": "piros 40-100 terített durchmars",
+        "color": "piros",
+        "games": ["40-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 30,
+        "point": 32,
+        "name": "piros ulti terített durchmars",
+        "color": "piros",
+        "games": ["ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": true,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 31,
+        "point": 36,
+        "name": "piros 20-100 ulti durchmars",
+        "color": "piros",
+        "games": ["20-100", "ulti", "durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 32,
+        "point": 40,
+        "name": "piros 40-100 ulti terített durchmars",
+        "color": "piros",
+        "games": ["40-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 33,
+        "point": 40,
+        "name": "piros 20-100 terített durchmars",
+        "color": "piros",
+        "games": ["20-100", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": true,
+            "durchmars": false,
+            "négy ász": false
+        }
+    },
+    {
+        "order": 34,
+        "point": 48,
+        "name": "piros 20-100 ulti terített durchmars",
+        "color": "piros",
+        "games": ["20-100", "ulti", "terített durchmars"],
+        "csendes": {
+            "40-100": false,
+            "ulti": false,
+            "durchmars": false,
+            "négy ász": false
+        }
+    }
+
+]

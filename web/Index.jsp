@@ -4,6 +4,8 @@
     Author     : Milán Szlávik <szlavikmilan@gmail.com>
 --%>
 
+
+<%@page import="tools.AnnotationExclusionStrategy"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
@@ -12,6 +14,7 @@
 <%@page import="java.io.FileReader"%>
 <%@page import="com.google.gson.stream.JsonReader"%>
 <%@page import="com.google.gson.reflect.TypeToken"%>
+<%@page import="com.google.gson.GsonBuilder"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="model.Card"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -33,7 +36,14 @@
         <%
             String jsonPath = (new File(request.getRealPath(request.getServletPath())).getParentFile()).getAbsolutePath() + "/js/cards.json";
             JsonReader reader = new JsonReader(new FileReader(jsonPath));
-            List<Card> cards = new Gson().fromJson(reader, new TypeToken<List<Card>>() {
+            List<Card> cards = new GsonBuilder()
+                    .setExclusionStrategies(new AnnotationExclusionStrategy())
+                    //.serializeNulls()
+                    //.setDateFormat(DateFormat.LONG)
+                    //.setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                    //.setPrettyPrinting()
+                    //.registerTypeAdapter(Id.class, IdTypeAdapter())
+                    .create().fromJson(reader, new TypeToken<List<Card>>() {
             }.getType());
 
             Map<String, List<Card>> coloredOrderedCardMap = new HashMap();

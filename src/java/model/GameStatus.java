@@ -14,7 +14,7 @@ import java.util.List;
 public class GameStatus {
     private String game;
     private String player;
-    private int round;
+    private Integer round;
     private List<String> talon;
     @SerializedName("cardsingame")
     private List<String> cardsInGame;
@@ -27,6 +27,7 @@ public class GameStatus {
     public GameStatus() {
         talon = new ArrayList<>();
         cardsInGame = new ArrayList<>();
+        round = 0;
     }
 
     public String getGame() {
@@ -45,11 +46,11 @@ public class GameStatus {
         this.player = player;
     }
 
-    public int getRound() {
+    public Integer getRound() {
         return round;
     }
 
-    public void setRound(int round) {
+    public void setRound(Integer round) {
         this.round = round;
     }
 

@@ -4,14 +4,15 @@
 package servlets;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.GameStatus;
+import tools.AnnotationExclusionStrategy;
 
 /**
  *
@@ -49,7 +50,14 @@ public class GameStatusServlet extends HttpServlet {
             // Handle regular (JSP) response.
         }
 
-        String responseJsonStr = new Gson().toJson(gs);
+        String responseJsonStr = new GsonBuilder()
+                    .setExclusionStrategies(new AnnotationExclusionStrategy())
+                    //.serializeNulls()
+                    //.setDateFormat(DateFormat.LONG)
+                    //.setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                    //.setPrettyPrinting()
+                    //.registerTypeAdapter(Id.class, IdTypeAdapter())
+                    .create().toJson(gs);
         
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
