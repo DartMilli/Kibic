@@ -59,7 +59,7 @@
                 }
             }
         %>
-        <div id="id01" class="modal" name="cardPickerDiv">
+        <div id="id01" class="modal">
             <div class="modal-content">
                 <div class="container">
                     <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close">&times;</span>

@@ -14,6 +14,8 @@ var highlightedCards = [];
 var allCards = [];
 var nominalCardWidth = 128;
 var nominalCardHeight = 200;
+var clickZones = [];
+var defaultColor = "#e3e3e3";
 
 var cardNames;
 function initCardNames() {
@@ -22,7 +24,7 @@ function initCardNames() {
         async: false,
         dataType: 'json'
     }).responseJSON;
-};
+}
 
 function getCardNameById(id) {
     for (var i = 0; i < cardNames.length; i++) {
@@ -157,6 +159,9 @@ var gameArea = {
         this.canvas.onmousemove = function (event) {
             mousemove(event);
         };
+        this.canvas.onclick = function (event) {
+            mouseclick(event);
+        };
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     },
@@ -179,7 +184,7 @@ function clickAndPostGameStatus() {
             updateGameArea();
         }
     });
-};
+}
 
 function component(width, height, color, x, y, type) {
     this.type = type;
@@ -198,7 +203,7 @@ function component(width, height, color, x, y, type) {
                     this.x,
                     this.y,
                     this.width, this.height);
-        } else {
+        } else if (!type.startsWith("clickZone")) {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
             ctx.beginPath();
@@ -223,6 +228,24 @@ function mousemove(e) {
             allCards[i].update();
         }
     }
+}
+
+function mouseclick(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    updateGameArea();
+    for (var i = 0; i < clickZones.length; i++) {
+        if (clickZones[i].contains(x, y)) {
+            document.getElementById('id01').style.display = 'block';
+            document.getElementById('id01').setAttribute("name", clickZones[i].type);
+        }
+    }
+}
+
+function initClickZones() {
+    clickZones.push(new component(nominalCardHeight, nominalCardWidth, defaultColor, 0, 0, "clickZone-gamer"));
+    clickZones.push(new component(nominalCardHeight, nominalCardWidth, defaultColor, 0, 0, "clickZone-leftgamer"));
+    clickZones.push(new component(nominalCardHeight, nominalCardWidth, defaultColor, 0, 0, "clickZone-rightgamer"));
 }
 
 function initCardsFromJson() {
@@ -269,7 +292,7 @@ function initCardsFromJson() {
             beatedCards[j - 1] = [];
             for (var k = 0; k < 3; k++) {
                 if (player.beated[key].length < 3) {
-                    beatedCards[j - 1][k] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0);
+                    beatedCards[j - 1][k] = new component(nominalCardWidth, nominalCardHeight, defaultColor, 0, 0, "none");
                 } else {
                     beatedCards[j - 1][k] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(player.beated[key][k]), 0, 0, "image");
                     allCards.push(beatedCards[j - 1][k]);
@@ -280,7 +303,7 @@ function initCardsFromJson() {
             thrownCard[0] = new component(nominalCardWidth, nominalCardHeight, getCardPathById(player.thrown[0]), 0, 0, "image");
             allCards.push(thrownCard[0]);
         } else {
-            thrownCard[0] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0, );
+            thrownCard[0] = new component(nominalCardWidth, nominalCardHeight, defaultColor, 0, 0, "none");
         }
     }
     //init opponent cards in game
@@ -293,8 +316,8 @@ function initCardsFromJson() {
         if (gameStatus.gamer.unknowncards + gameStatus.gamer.hand.length == 12
                 || gameStatus.rightgamer.unknowncards + gameStatus.rightgamer.hand.length == 12
                 || gameStatus.leftgamer.unknowncards + gameStatus.leftgamer.hand.length == 12) {
-            cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0);
-            cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, "#e3e3e3", 0, 0);
+            cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, defaultColor, 0, 0, "none");
+            cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, defaultColor, 0, 0, "none");
         } else {
             cardsInTalon[0] = new component(nominalCardWidth, nominalCardHeight, getCardPathById("h"), 0, 0, "image");
             cardsInTalon[1] = new component(nominalCardWidth, nominalCardHeight, getCardPathById("h"), 0, 0, "image");
@@ -429,8 +452,41 @@ function drawThrownCards(normalCardWidth, normalCardHeight, smallCardWidth, smal
     rightGamerThrownCard[0].update();
 }
 
+function drawClickZones(normalCardWidth, normalCardHeight, smallCardWidth, smallCardHeight) {
+    for (var i = 0; i < clickZones.length; i++) {
+        var type = clickZones[i].type;
+        var x, y, w, h;
+        switch (type) {
+            case "clickZone-gamer":
+                x = 0;
+                y = gameArea.canvas.height - normalCardHeight - smallCardHeight;
+                w = gameArea.canvas.width;
+                h = normalCardHeight;
+                break;
+            case "clickZone-leftgamer":
+                x = 2 * smallCardWidth;
+                y = smallCardHeight;
+                w = 1.5 * normalCardWidth;
+                h = gameArea.canvas.height - (2 * smallCardHeight + normalCardHeight);
+                break;
+            case "clickZone-rightgamer":
+                x = gameArea.canvas.width - 2 * smallCardWidth - 1.5 * normalCardWidth;
+                y = smallCardHeight;
+                w = 1.5 * normalCardWidth;
+                h = gameArea.canvas.height - (2 * smallCardHeight + normalCardHeight);
+                break;
+                break;
+        }
+        clickZones[i].x = x;
+        clickZones[i].y = y;
+        clickZones[i].width = w;
+        clickZones[i].height = h;
+        clickZones[i].update();
+    }
+}
+
 function updateCards() {
-    var normalCardHeight = 220;
+    var normalCardHeight = nominalCardHeight * 1.1;
     var normalCardWidth;
     do {
         normalCardHeight /= 1.01;
@@ -446,6 +502,7 @@ function updateCards() {
     drawCardsInGame(normalCardWidth, normalCardHeight, smallCardWidth, smallCardHeight);
     drawTalon(normalCardWidth, normalCardHeight, smallCardWidth, smallCardHeight);
     drawThrownCards(normalCardWidth, normalCardHeight, smallCardWidth, smallCardHeight);
+    drawClickZones(normalCardWidth, normalCardHeight, smallCardWidth, smallCardHeight);
 
     for (var i = 0; i < highlightedCards.length; i++) {
         highlightedCards[i].update();
@@ -466,6 +523,7 @@ function startGame() {
     gameArea.start();
     readJson();
     initCardsFromJson();
+    initClickZones();
     updateGameArea();
 }
 
@@ -477,6 +535,8 @@ function updateGameArea() {
 }
 
 function fillGameStatusFromCardPicker() {
+    var name = document.getElementById('id01').getAttribute("name");
+    console.log("ez már a fill clicknél:", name);
     var chkboxes = document.getElementsByTagName("input");
     var cardList = [];
     for (var i = 0; i < chkboxes.length; i++) {
