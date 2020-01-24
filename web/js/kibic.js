@@ -188,10 +188,15 @@ function clickAndPostGameStatus() {
 
 function component(width, height, color, x, y, type) {
     this.type = type;
+    this.opaque = false;
+    this.setOpaque = function (boolean) {
+        this.opaque = boolean;
+    }
     if (type == "image") {
         this.image = new Image();
         this.image.src = color;
-    }
+        this.path = this.image.src;
+    }    
     this.width = width;
     this.height = height;
     this.x = x;
@@ -203,6 +208,12 @@ function component(width, height, color, x, y, type) {
                     this.x,
                     this.y,
                     this.width, this.height);
+            if (this.opaque) {
+                ctx.globalAlpha = 0.8;
+                ctx.fillStyle = "#ffffff";
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+                ctx.globalAlpha = 1.0;
+            }          
         } else if (!type.startsWith("clickZone")) {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -408,6 +419,12 @@ function drawRightGamerCards(normalCardWidth, normalCardHeight, smallCardWidth, 
 
 function drawCardsInGame(normalCardWidth, normalCardHeight, smallCardWidth, smallCardHeight) {
     for (var i = 0; i < cardsInGame.length; i++) {
+        for (var j = 0; j < middleGamerCards.length; j++) {
+            if (cardsInGame[i].path == middleGamerCards[j].path) {
+                cardsInGame[i].setOpaque(true);
+                break;
+            }
+        }
         cardsInGame[i].x = /*2 * smallCardWidth + */i * (gameArea.canvas.width - smallCardWidth/* - 4 * smallCardWidth*/) / (cardsInGame.length - 1);
         cardsInGame[i].y = 0;
         cardsInGame[i].width = smallCardWidth;
