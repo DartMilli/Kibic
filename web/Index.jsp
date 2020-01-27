@@ -31,7 +31,7 @@
     <body onload="startGame()">
         <div>
             <button onclick="clickAndPostGameStatus()">"Click Me!"</button>
-            <button onclick="document.getElementById('id01').style.display = 'block'">"Click Me2!"</button>            
+            <!--<button onclick="document.getElementById('id01').style.display = 'block'">"Click Me2!"</button>-->          
         </div>
         <%
             String jsonPath = (new File(request.getRealPath(request.getServletPath())).getParentFile()).getAbsolutePath() + "/js/cards.json";
@@ -73,7 +73,7 @@
                         <%      } %>
                     </div>
                     <% }%>
-                    <button onclick="fillGameStatusFromCardPicker()">Go</button>
+                    <button onclick="fillGameStatusFromCardPicker()">OK</button>
                 </div>
             </div>
         </div>

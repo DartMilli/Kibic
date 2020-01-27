@@ -53,12 +53,22 @@ function getCardColorById(id) {
     return "";
 }
 
+function getCardIdByName(name) {
+    for (var i = 0; i < cardNames.length; i++) {
+        if (name == cardNames[i]["name"]) {
+            return cardNames[i]["id"];
+        }
+    }
+    return "";
+}
+
 var status;
 function initEmptyStatus() {
     status += '{                         ';
     status += '    "game": "",           ';
     status += '	   "player": "gamer",    ';
-    status += '	   "round": 0,           ';
+    status += '	   "caller": "",    ';
+    status += '	   "round": -1,          ';
     status += '	   "talon": [],          ';
     status += '	   "cardsingame": [      ';
     status += '        "pas",            ';
@@ -249,6 +259,7 @@ function mouseclick(e) {
         if (clickZones[i].contains(x, y)) {
             document.getElementById('id01').style.display = 'block';
             document.getElementById('id01').setAttribute("name", clickZones[i].type);
+            setDesabledCardsInCardPicker(clickZones[i].type);
         }
     }
 }
@@ -257,6 +268,7 @@ function initClickZones() {
     clickZones.push(new component(nominalCardHeight, nominalCardWidth, defaultColor, 0, 0, "clickZone-gamer"));
     clickZones.push(new component(nominalCardHeight, nominalCardWidth, defaultColor, 0, 0, "clickZone-leftgamer"));
     clickZones.push(new component(nominalCardHeight, nominalCardWidth, defaultColor, 0, 0, "clickZone-rightgamer"));
+    clickZones.push(new component(nominalCardHeight, nominalCardWidth, defaultColor, 0, 0, "clickZone-talon"));
 }
 
 function initCardsFromJson() {
@@ -492,6 +504,11 @@ function drawClickZones(normalCardWidth, normalCardHeight, smallCardWidth, small
                 w = 1.5 * normalCardWidth;
                 h = gameArea.canvas.height - (2 * smallCardHeight + normalCardHeight);
                 break;
+            case "clickZone-talon":
+                x = gameArea.canvas.width / 2 - normalCardWidth;
+                y = smallCardHeight;
+                w = 2 * normalCardWidth;
+                h = normalCardHeight;
                 break;
         }
         clickZones[i].x = x;
@@ -553,14 +570,53 @@ function updateGameArea() {
 
 function fillGameStatusFromCardPicker() {
     var name = document.getElementById('id01').getAttribute("name");
-    console.log("ez már a fill clicknél:", name);
     var chkboxes = document.getElementsByTagName("input");
     var cardList = [];
+    
+    
+    var round = gameStatus["round"];
+    var clickedName = name.slice(10);
+
+    
     for (var i = 0; i < chkboxes.length; i++) {
         if (chkboxes[i].checked) {
-            cardList.push(chkboxes[i].name);
+            //cardList.push(chkboxes[i].name);
         }
     }
+    
+    if (clickedName == "gamer") {
+        if (round<0) {
+            
+        }else if (round == 0){
+            
+        }else if(round > 0){
+        
+        }        
+    }else if(clickedName == "rightgamer"){
+        if (round<0) {
+            // nem történik semmi
+        }else if(round == 0){
+            // bemond valamit ha ő jön, de nem tehet le semmit
+        }else if(round > 0){            
+                    
+        }        
+    }else if(clickedName == "leftgamer"){
+        if (round<0) {
+            // nem történik semmi
+        }else if(round == 0){
+            // bemond valamit ha ő jön, de nem tehet le semmit
+        }else if(round > 0){
+        
+        }
+    }else if(clickedName == "leftgamer"){
+        if(round == 0){
+            //talon bekerül gamer kártyái közé
+        }else{
+            // nem történik semmi
+        }
+    }
+    
+    
     if (cardList.length == 10 || cardList.length == 12) {
         gameStatus.gamer.hand = cardList;
         gameStatus.gamer.unknowncards = 0;
@@ -572,5 +628,38 @@ function fillGameStatusFromCardPicker() {
         document.getElementById('id01').style.display = 'none';
     } else {
         alert("10 or 12 must be choosen!");
+    }
+}
+
+function setDesabledCardsInCardPicker(clickedZoneName){
+    var clickedName = clickedZoneName.slice(10);
+    var notAllowedCards = [];
+    var round = gameStatus["round"];
+    
+    if (round < 0) {
+        if (clickedName == "gamer") {
+            
+        }else{
+            for (var i = 0; i < cardsInGame.length; i++) {
+                notAllowedCards.push(cardsInGame[i]);
+            }
+        }        
+    }else if(round == 0){
+        
+    }else if(round > 0){
+        if (clickedName == "gamer") {            
+                        
+        }else{
+            
+        }
+        
+    }
+    
+    for (var i = 0; i < notAllowedCards.length; i++) {
+        for (var j = 0; j < chkboxes.length; i++) {
+            if (chkboxes[j].name == notAllowedCards[i]) {
+                chkboxes[j].disabled = true;
+            }
+        }
     }
 }

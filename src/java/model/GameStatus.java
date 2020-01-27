@@ -14,6 +14,7 @@ import java.util.List;
 public class GameStatus {
     private String game;
     private String player;
+    private String caller;
     private Integer round;
     private List<String> talon;
     @SerializedName("cardsingame")
@@ -44,6 +45,14 @@ public class GameStatus {
 
     public void setPlayer(String player) {
         this.player = player;
+    }
+
+    public String getCaller() {
+        return caller;
+    }
+
+    public void setCaller(String caller) {
+        this.caller = caller;
     }
 
     public Integer getRound() {
@@ -96,8 +105,6 @@ public class GameStatus {
 
     @Override
     public String toString() {
-        return "GameStatus{" + "game=" + game + ", player=" + player + ", round=" + round + ", talon=" + talon + ", cardsInGame=" + cardsInGame + ", gamer=" + gamer + ", rightGamer=" + rightGamer + ", leftGamer=" + leftGamer + '}';
-    }
-    
-    
+        return "GameStatus{" + "game=" + game + ", player=" + player + ", caller=" + caller + ", round=" + round + ", talon=" + talon + ", cardsInGame=" + cardsInGame + ", gamer=" + gamer + ", rightGamer=" + rightGamer + ", leftGamer=" + leftGamer + '}';
+    }    
 }
