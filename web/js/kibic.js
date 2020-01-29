@@ -62,6 +62,17 @@ function getCardIdByName(name) {
     return "";
 }
 
+function getCardIdByPath(path){
+    if (path != undefined || path != null) {
+        for (var i = 0; i < cardNames.length; i++) {
+            if (path.endsWith(cardNames[i]["path"])) {
+                return cardNames[i]["id"];
+            }
+        }
+    }
+    return "";
+}
+
 var status;
 function initEmptyStatus() {
     status += '{                         ';
@@ -192,6 +203,7 @@ function clickAndPostGameStatus() {
             readJson();
             initCardsFromJson();
             updateGameArea();
+            alert("Updated!");
         }
     });
 }
@@ -257,9 +269,13 @@ function mouseclick(e) {
     updateGameArea();
     for (var i = 0; i < clickZones.length; i++) {
         if (clickZones[i].contains(x, y)) {
-            document.getElementById('id01').style.display = 'block';
-            document.getElementById('id01').setAttribute("name", clickZones[i].type);
-            setDesabledCardsInCardPicker(clickZones[i].type);
+            if (gameStatus["round"] > 0 && gameStatus["caller"] != clickZones[i].type.slice(10)) {
+                alert("It is not " + clickZones[i].type.slice(10) + "'s turn!")
+            }else{
+                document.getElementById('id01').style.display = 'block';
+                document.getElementById('id01').setAttribute("name", clickZones[i].type);
+                setDesabledCardsInCardPicker(clickZones[i].type);
+            }            
         }
     }
 }
@@ -571,26 +587,36 @@ function updateGameArea() {
 function fillGameStatusFromCardPicker() {
     var name = document.getElementById('id01').getAttribute("name");
     var chkboxes = document.getElementsByTagName("input");
-    var cardList = [];
-    
+    var cardList = [];    
     
     var round = gameStatus["round"];
     var clickedName = name.slice(10);
 
-    
     for (var i = 0; i < chkboxes.length; i++) {
         if (chkboxes[i].checked) {
-            //cardList.push(chkboxes[i].name);
+            cardList.push(chkboxes[i].name);
         }
     }
     
     if (clickedName == "gamer") {
-        if (round<0) {
-            
+        if (round < 0) {
+            if (cardList.length == 10 || cardList.length == 12) {
+                gameStatus.gamer.hand = cardList;
+                clickAndPostGameStatus();
+                closeCardPicker();                
+            }else{
+                alert("10 or 12 card must be choosen!");
+            }
         }else if (round == 0){
-            
+            // bemod valamit ha ő jön és leteszi a talont ha 12 lapja van
         }else if(round > 0){
-        
+            if (cardList.length != 1) {
+                alert("1 card must be choosen!");
+            }else{
+                gameStatus.gamer.thrown = cardList;
+                clickAndPostGameStatus();
+                closeCardPicker();
+            }
         }        
     }else if(clickedName == "rightgamer"){
         if (round<0) {
@@ -598,7 +624,13 @@ function fillGameStatusFromCardPicker() {
         }else if(round == 0){
             // bemond valamit ha ő jön, de nem tehet le semmit
         }else if(round > 0){            
-                    
+            if (cardList.length != 1) {
+                alert("1 card must be choosen!");
+            }else{
+                gameStatus.rightgamer.thrown = cardList;
+                clickAndPostGameStatus();
+                closeCardPicker();
+            }
         }        
     }else if(clickedName == "leftgamer"){
         if (round<0) {
@@ -606,60 +638,91 @@ function fillGameStatusFromCardPicker() {
         }else if(round == 0){
             // bemond valamit ha ő jön, de nem tehet le semmit
         }else if(round > 0){
-        
+            if (cardList.length != 1) {
+                alert("1 card must be choosen!");
+            }else{
+                gameStatus.leftgamer.thrown = cardList;
+                clickAndPostGameStatus();
+                closeCardPicker();
+            }
         }
-    }else if(clickedName == "leftgamer"){
+    }else if(clickedName == "talon"){
         if(round == 0){
             //talon bekerül gamer kártyái közé
         }else{
-            // nem történik semmi
+            //nem történik semmi
         }
-    }
-    
-    
-    if (cardList.length == 10 || cardList.length == 12) {
-        gameStatus.gamer.hand = cardList;
-        gameStatus.gamer.unknowncards = 0;
-        clickAndPostGameStatus();
-
-        for (var i = 0; i < chkboxes.length; i++) {
-            chkboxes[i].checked = false;
-        }
-        document.getElementById('id01').style.display = 'none';
-    } else {
-        alert("10 or 12 must be choosen!");
     }
 }
 
 function setDesabledCardsInCardPicker(clickedZoneName){
     var clickedName = clickedZoneName.slice(10);
-    var notAllowedCards = [];
+    var allowedCardsId = [];
     var round = gameStatus["round"];
+    var chkboxes = document.getElementsByTagName("input");
+    
+    var cardsInGameId = [];
+    for (var i = 0; i < cardsInGame.length; i++) {
+        cardsInGameId.push(getCardIdByPath(cardsInGame[i].path));
+    }
+    var middleGamerCardsId = [];
+    for (var i = 0; i < middleGamerCards.length; i++) {
+        middleGamerCardsId.push(getCardIdByPath(middleGamerCards[i].path));
+    }
+    var leftGamerCardsId = [];
+    for (var i = 0; i < leftGamerCards.length; i++) {
+        leftGamerCardsId.push(getCardIdByPath(leftGamerCards[i].path));
+    }
+    var rightGamerCardsId = [];
+    for (var i = 0; i < rightGamerCards.length; i++) {
+        rightGamerCardsId.push(getCardIdByPath(rightGamerCards[i].path));
+    }
+    var talonCardsId = [];
+    for (var i = 0; i < cardsInTalon.length; i++) {
+        talonCardsId.push(getCardIdByPath(cardsInTalon[i].path));
+    }
+    
+    for (var i = 0; i < chkboxes.length; i++) {
+        chkboxes[i].disabled = true;
+    }
     
     if (round < 0) {
-        if (clickedName == "gamer") {
-            
+        if (clickedName == "gamer") {            
+            allowedCardsId = cardsInGameId;
         }else{
-            for (var i = 0; i < cardsInGame.length; i++) {
-                notAllowedCards.push(cardsInGame[i]);
-            }
-        }        
+            allowedCardsId = [];
+        }       
     }else if(round == 0){
-        
+        if (clickedName == "gamer") {            
+            allowedCardsId = cardsInGameId;
+        }else if (clickedName == "talon") {            
+            allowedCardsId = substractListBFromA(cardsInGameId, middleGamerCardsId);
+        }else{
+            allowedCardsId = [];
+        }
     }else if(round > 0){
         if (clickedName == "gamer") {            
-                        
-        }else{
-            
-        }
-        
+            allowedCardsId = middleGamerCardsId
+        }else if (clickedName == leftgamer) {
+            allowedCardsId = substractListBFromA(cardsInGameId,union(middleGamerCardsId,union(talonCardsId,rightGamerCardsId)));
+        }else if (clickedName == rightgamer){
+            allowedCardsId = substractListBFromA(cardsInGameId,union(middleGamerCardsId,union(talonCardsId,leftGamerCardsId)));
+        }        
     }
     
-    for (var i = 0; i < notAllowedCards.length; i++) {
-        for (var j = 0; j < chkboxes.length; i++) {
-            if (chkboxes[j].name == notAllowedCards[i]) {
-                chkboxes[j].disabled = true;
+    for (var i = 0; i < allowedCardsId.length; i++) {
+        for (var j = 0; j < chkboxes.length; j++) {
+            if (chkboxes[j].name == allowedCardsId[i]) {
+                chkboxes[j].disabled = false;
             }
         }
     }
+}
+
+function closeCardPicker(){
+    var chkboxes = document.getElementsByTagName("input");
+    for (var i = 0; i < chkboxes.length; i++) {
+        chkboxes[i].checked = false;
+    }
+    document.getElementById('id01').style.display = 'none';
 }

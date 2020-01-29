@@ -26,6 +26,7 @@
         <link rel = "icon" href = "img/icon.png" type = "image/x-icon">
         <link rel="stylesheet" type="text/css" href="css/kibic.css">
         <script type="text/javascript" src="js/kibic.js"></script>
+        <script type="text/javascript" src="js/listfunctions.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body onload="startGame()">

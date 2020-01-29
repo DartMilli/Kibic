@@ -40,16 +40,16 @@ public class GameStatusServlet extends HttpServlet {
         //https://stackoverflow.com/questions/30663562/use-images-like-checkboxes
         //https://www.w3schools.com/howto/howto_css_login_form.asp
         GameStatus gs = new Gson().fromJson(reader, GameStatus.class);
-        System.out.println(gs);
+        System.out.println("In request: " + gs);
 
         boolean ajax = "XMLHttpRequest".equals(request.getHeader("X-Requested-With"));
-
         if (ajax) {
             // Handle ajax (JSON or XML) response.
         } else {
             // Handle regular (JSP) response.
         }
 
+        System.out.println("In response: " + gs);
         String responseJsonStr = new GsonBuilder()
                     .setExclusionStrategies(new AnnotationExclusionStrategy())
                     //.serializeNulls()
