@@ -5,13 +5,16 @@ package model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import tools.Exclude;
 
 /**
  *
  * @author Milán Szlávik <szlavikmilan@gmail.com>
  */
 public class GameStatus {
+
     private String game;
     private String player;
     private String caller;
@@ -28,7 +31,6 @@ public class GameStatus {
     public GameStatus() {
         talon = new ArrayList<>();
         cardsInGame = new ArrayList<>();
-        round = 0;
     }
 
     public String getGame() {
@@ -106,5 +108,49 @@ public class GameStatus {
     @Override
     public String toString() {
         return "GameStatus{" + "game=" + game + ", player=" + player + ", caller=" + caller + ", round=" + round + ", talon=" + talon + ", cardsInGame=" + cardsInGame + ", gamer=" + gamer + ", rightGamer=" + rightGamer + ", leftGamer=" + leftGamer + '}';
-    }    
+    }
+
+    public void sortCards() {
+        Card.sortStrCardList(cardsInGame);
+        Player p;
+        List<String> tmpLst;
+        for (int i = 0; i < 3; i++) {
+            switch (i) {
+                case 1:
+                    p = leftGamer;
+                    break;
+                case 2:
+                    p = rightGamer;
+                    break;
+                case 0:
+                default:
+                    p = gamer;
+                    break;
+            }
+            tmpLst = p.getHand();
+            Card.sortStrCardList(tmpLst);
+            p.setHand(tmpLst);
+        }
+    }
+
+    public static void updateStatus(GameStatus gs) {
+        int round = gs.getRound();
+        Player gamer = gs.getGamer();
+        switch (round) {
+            case -1:
+                if (gamer.getHand().size() >= 10) {
+                    gamer.setUnknownCards(0);
+                    gs.setRound(0);
+                }
+                break;
+            case 0:
+                break;
+            case 1:
+                break;
+            default:
+                break;
+
+        }
+        gs.sortCards();
+    }
 }

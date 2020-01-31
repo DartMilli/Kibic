@@ -31,7 +31,7 @@
     </head>
     <body onload="startGame()">
         <div>
-            <button onclick="clickAndPostGameStatus()">"Click Me!"</button>
+            <!--<button onclick="clickAndPostGameStatus()">"Click Me!"</button>-->
             <!--<button onclick="document.getElementById('id01').style.display = 'block'">"Click Me2!"</button>-->          
         </div>
         <%

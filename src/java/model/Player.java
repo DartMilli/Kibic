@@ -16,7 +16,7 @@ public class Player {
     @Exclude
     private String name; 
     @SerializedName("unknowncards")
-    private Integer unknownCards;
+    private int unknownCards;
     private List<String> calls;
     private List<String> thrown;
     private List<String> hand;
@@ -26,7 +26,6 @@ public class Player {
         calls = new ArrayList<>();
         hand = new ArrayList<>();
         thrown = new ArrayList<>();
-        unknownCards = 0;
     }
 
     public int getUnknownCards() {
@@ -52,7 +51,7 @@ public class Player {
     public void setThrown(List<String> thrown) {
         this.thrown = thrown;
     }
-
+    
     public List<String> getHand() {
         return hand;
     }

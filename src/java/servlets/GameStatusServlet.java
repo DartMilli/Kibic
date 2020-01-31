@@ -48,6 +48,8 @@ public class GameStatusServlet extends HttpServlet {
         } else {
             // Handle regular (JSP) response.
         }
+        
+        GameStatus.updateStatus(gs);
 
         System.out.println("In response: " + gs);
         String responseJsonStr = new GsonBuilder()
